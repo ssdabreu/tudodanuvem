@@ -1,0 +1,41 @@
+No vídeo foram utilizados os comandos a baixo.
+
+
+---------------------- Comandos para a 1ª VM ----------------------
+
+#!/bin/bash 
+sudo su
+apt  update -y
+apt  install apache2  -y
+mv /var/www/html/index.html  /var/www/html/index.html.bkp
+touch /var/www/html/index.html      
+echo Acessando o site TUDODANUVEM na INSTANCIA-1 >> /var/www/html/index.html
+chmod 777 /var/www/html/index.html
+mkdir -p /var/www/html/work
+touch /var/www/html/work/test.html
+echo Acessando a pasta WORK do site TUDODANUVEM na INSTANCIA-1 >> /var/www/html/work/test.html
+mkdir -p /var/www/html/images
+touch /var/www/html/images/test.html
+echo Acessando a pasta IMAGES do site TUDODANUVEM na INSTANCIA-1 >> /var/www/html/images/test.html
+systemctl restart apache2 
+systemctl enable apache2 
+
+
+---------------------- Comandos para a 2ª VM ----------------------
+
+#!/bin/bash 
+sudo su
+apt  update -y
+apt  install apache2  -y
+mv /var/www/html/index.html  /var/www/html/index.html.bkp
+touch /var/www/html/index.html      
+echo Acessando o site TUDODANUVEM na INSTANCIA-2 >> /var/www/html/index.html
+chmod 777 /var/www/html/index.html
+mkdir -p /var/www/html/work
+touch /var/www/html/work/test.html
+echo Acessando a pasta WORK do site TUDODANUVEM na INSTANCIA-2 >> /var/www/html/work/test.html
+mkdir -p /var/www/html/images
+touch /var/www/html/images/test.html
+echo Acessando a pasta IMAGES do site TUDODANUVEM na INSTANCIA-2 >> /var/www/html/images/test.html
+systemctl restart apache2 
+systemctl enable apache2 
